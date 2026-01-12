@@ -1,16 +1,62 @@
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 <nav>
-    <h1>Shourya Sharma</h1>
-    <ul class="navigation" [ngClass]="{'show': toggle}" (click)="clickEvent()">
-      <li><a href="#about" class="nav-link" >About</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#wrk-exp" class="nav-link">Work Experience</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
+    <div class="nav-brand" (click)="closeMenu()">
+        <img src="assets/favicon.png" alt="Logo" class="nav-logo">
+        <div class="brand-info">
+            <h1>Shourya Sharma</h1>
+            <span class="brand-subtitle">Full Stack Developer</span>
+        </div>
+    </div>
 
+    <ul class="desktop-nav">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#wrk-exp" class="nav-link">Work Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
-    <button class="button" id="burger-menu"  (click)="clickEvent()" [ngClass]="{'show': toggle}" >
-      <i class='bx bx-list-plus bx-md' ></i>
+
+    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
     </button>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>
+<div class="mobile-menu" [class.active]="isMenuOpen">
+    <div class="mobile-menu-header">
+        <h2>Menu</h2>
+        <button class="close-btn" (click)="closeMenu()" aria-label="Close menu">
+            <i class='bx bx-x'></i>
+        </button>
+    </div>
+    <ul class="mobile-nav">
+        <li><a href="#about" (click)="closeMenu()" class="mobile-nav-link">
+                <i class='bx bx-user'></i>
+                <span>About</span>
+            </a></li>
+        <li><a href="#education" (click)="closeMenu()" class="mobile-nav-link">
+                <i class='bx bx-book'></i>
+                <span>Education</span>
+            </a></li>
+        <li><a href="#skills" (click)="closeMenu()" class="mobile-nav-link">
+                <i class='bx bx-code-alt'></i>
+                <span>Skills</span>
+            </a></li>
+        <li><a href="#projects" (click)="closeMenu()" class="mobile-nav-link">
+                <i class='bx bx-briefcase'></i>
+                <span>Projects</span>
+            </a></li>
+        <li><a href="#wrk-exp" (click)="closeMenu()" class="mobile-nav-link">
+                <i class='bx bx-timer'></i>
+                <span>Work Experience</span>
+            </a></li>
+        <li><a href="#contact" (click)="closeMenu()" class="mobile-nav-link">
+                <i class='bx bx-envelope'></i>
+                <span>Contact</span>
+            </a></li>
+    </ul>
+</div>

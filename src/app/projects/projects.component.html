@@ -1,16 +1,27 @@
 <div class="container" id="projects">
-    <h1>Projects</h1>
-
-    <section *ngFor="let project of projects">
-        <h2>{{project.title}}</h2>
-
-        <h3>
-            <span>Technologies: </span>
-            <span>{{project.technologies}}</span>
-        </h3>
-
-        <ul *ngFor="let desc of project.description">
-            <li>{{desc}}</li>
-        </ul>
-    </section>
-</div>
+    <h1>Featured Projects</h1>
+    <div class="projects-grid">
+        <div class="project-card" *ngFor="let project of projects; let i = index"
+            [style.animation-delay]="i * 0.15 + 's'">
+            <div class="project-header">
+                <div class="project-icon">
+                    <i class='bx' [ngClass]="project.icon"></i>
+                </div>
+                <div class="project-number">{{i + 1 < 10 ? '0' + (i + 1) : i + 1}}</div>
+                </div>
+                <h2 class="project-title">{{project.title}}</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag" *ngFor="let tech of getTechnologies(project.technologies)">{{tech}}</span>
+                </div>
+                <ul class="project-description">
+                    <li *ngFor="let desc of project.description">{{desc}}</li>
+                </ul>
+                <div class="project-footer">
+                    <div class="project-stat">
+                        <i class='bx bx-code-block'></i>
+                        <span>{{project.description.length}} features</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

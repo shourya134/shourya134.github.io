@@ -9,18 +9,22 @@ export class EducationComponent {
   educationList: Education[] = [
     {
       institute: "University of Toronto",
-      course: 'HBSc. in Physics, Mathematics and Computer Science',
-      duration: '2017-2022',
-      score: ''
-      ,
-    },
-   
-    {
-      institute: 'Jayshree Perialwal International School',
-      course: 'The International Baccalaureate Diploma Programme',
-      duration: '2015-2017',
-      score: '39/45',
-    },
+      course: 'B.Sc Computer Science And Mathematics',
+      duration: 'Toronto, ON',
+      score: '',
+      courses: [
+        'Time Series Analysis',
+        'Computational Physics',
+        'Multi-variable Calculus',
+        'Physics-based Animation',
+        'Databases',
+        'Machine Learning',
+        'Data structures and algorithms',
+        'Operating Systems',
+        'Advanced Linear Algebra',
+        'System Design'
+      ]
+    }
   ];
 
   constructor() {}
@@ -33,4 +37,5 @@ interface Education {
   course: string;
   duration: string;
   score: string;
+  courses?: string[];
 }

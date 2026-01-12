@@ -7,20 +7,20 @@ import { Component } from '@angular/core';
 })
 export class NavMenuComponent {
 
-  public toggle : boolean = false;
-              
-//define your method
-  clickEvent(){
-    //if you just want to toggle the class; change toggle variable.
-    this.toggle = !this.toggle;       
+  public isMenuOpen: boolean = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    // Prevent body scroll when menu is open
+    if (this.isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+    document.body.style.overflow = '';
   }
 }
-const ul = document.querySelector("nav ul");
-const nav = document.querySelector("nav")
-const burger = document.getElementById("burger-menu")
-
-if(burger!= null && ul != null){
-  burger.addEventListener("click",() =>{
-    ul.classList.add("show")
-
-})}

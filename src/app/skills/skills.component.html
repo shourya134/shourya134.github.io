@@ -1,15 +1,24 @@
 <div class="container" id="skills">
-    <h1>Skills</h1>
-
-    <section *ngFor="let skill of skills">
-        <h2>{{skill.name}}</h2>
-        <h4>{{skill.level}}</h4>
-
-        <div class="rating">
-            <div class="bar">
-                <div [ngStyle]="{'width': skill.rating+'%'}"></div>
+    <h1>Skills & Expertise</h1>
+    <div class="skills-grid">
+        <div class="skill-card" *ngFor="let skill of skills; let i = index" [style.animation-delay]="i * 0.1 + 's'">
+            <div class="skill-header">
+                <div class="skill-icon">
+                    <i class='bx' [ngClass]="skill.icon"></i>
+                </div>
+                <div class="skill-info">
+                    <h2>{{skill.name}}</h2>
+                    <span class="skill-level">{{skill.level}}</span>
+                </div>
             </div>
-            <div>{{skill.rating}}%</div>
+            <div class="rating-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" [style.width.%]="skill.rating">
+                        <div class="progress-glow"></div>
+                    </div>
+                </div>
+                <span class="rating-percentage">{{skill.rating}}%</span>
+            </div>
         </div>
-    </section>
+    </div>
 </div>

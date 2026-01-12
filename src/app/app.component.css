@@ -1,11 +1,10 @@
 :host {
     display: block;
-    background-color:rgb(30, 30, 30);
-    overflow-x:hidden;
+    background-color: var(--bg-primary);
+    overflow-x: hidden;
 }
 
 :host.pc .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-

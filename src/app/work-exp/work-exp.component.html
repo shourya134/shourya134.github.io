@@ -1,21 +1,26 @@
 <div class="container" id="wrk-exp">
     <h1>Work Experience</h1>
+
     <section *ngFor="let experience of experience_list">
-        <h2>
-            {{experience.title}}</h2> 
-            <p>Working at</p>
-            <h2>{{experience.company_name}}</h2>
+        <div class="experience-header">
+            <div class="title-section">
+                <h2>{{experience.title}}</h2>
+                <h3>{{experience.company_name}}</h3>
+            </div>
+            <div class="meta-info">
+                <span class="duration">{{experience.duration}}</span>
+                <span class="location">{{experience.location}}</span>
+            </div>
+        </div>
 
-        <h3>
-            <span>Technologies: </span>
+        <div class="technologies">
+            <strong>Technologies:</strong>
             <span>{{experience.technologies}}</span>
-        </h3>
+        </div>
 
-        <ul *ngFor="let desc of experience.description">
-            <li>{{desc}}</li>
+        <ul class="responsibilities">
+            <li *ngFor="let desc of experience.description">{{desc}}</li>
         </ul>
     </section>
-
-
 </div>
 

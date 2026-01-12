@@ -2,9 +2,19 @@
     <h1>Education</h1>
 
     <section *ngFor="let education of educationList">
-        <h2>{{education.course}}</h2>
-        <h3>{{education.institute}}</h3>
-        <h4>{{education.duration}}</h4>
-        <h4>{{education.score}}</h4>
+        <div class="education-header">
+            <div class="education-info">
+                <h2>{{education.institute}}</h2>
+                <h3>{{education.course}}</h3>
+                <p class="location">{{education.duration}}</p>
+            </div>
+        </div>
+
+        <div class="courses-section" *ngIf="education.courses && education.courses.length > 0">
+            <h4>Relevant Coursework</h4>
+            <div class="courses-grid">
+                <span *ngFor="let course of education.courses" class="course-tag">{{course}}</span>
+            </div>
+        </div>
     </section>
 </div>

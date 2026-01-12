@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { SkillsComponent } from './skills/skills.component';
 import { EducationComponent } from './education/education.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -16,7 +15,6 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PersonalInfoComponent,
     SkillsComponent,
     EducationComponent,
     ProjectsComponent,
